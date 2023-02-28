@@ -1,16 +1,15 @@
-public class Equipo {
+public class Equipo_futbol implements Equipo{
     private String nombreEquipo;
 
     private int goles;
 
-    Equipo() {
+    Equipo_futbol() {
 
     }
 
-    Equipo(String nombre) {
+    Equipo_futbol(String nombre) {
         this.nombreEquipo=nombre;
     }
-
 
 
     public String getNombreEquipo() {
