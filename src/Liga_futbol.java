@@ -1,15 +1,13 @@
-public class Liga implements NormasLiga{
+public class Liga_futbol implements Liga {
 
 
     private String nombreLiga;
 
-    private Equipo[] equipos = new Equipo[22];
-
-    Liga() {
+    Liga_futbol() {
 
     }
 
-    Liga(String nombre) {
+    Liga_futbol(String nombre) {
         this.nombreLiga=nombre;
         rellenarEquipos();
     }
@@ -24,28 +22,28 @@ public class Liga implements NormasLiga{
     }
 
     private void rellenarEquipos() {
-        Equipo equipo1 = new Equipo("equipo1");
-        Equipo equipo2 = new Equipo("equipo2");
-        Equipo equipo3 = new Equipo("equipo3");
-        Equipo equipo4 = new Equipo("equipo4");
-        Equipo equipo5 = new Equipo("equipo5");
-        Equipo equipo6 = new Equipo("equipo6");
-        Equipo equipo7 = new Equipo("equipo7");
-        Equipo equipo8 = new Equipo("equipo8");
-        Equipo equipo9 = new Equipo("equipo9");
-        Equipo equipo10 = new Equipo("equipo10");
-        Equipo equipo11 = new Equipo("equipo11");
-        Equipo equipo12 = new Equipo("equipo12");
-        Equipo equipo13 = new Equipo("equipo13");
-        Equipo equipo14 = new Equipo("equipo14");
-        Equipo equipo15 = new Equipo("equipo15");
-        Equipo equipo16 = new Equipo("equipo16");
-        Equipo equipo17 = new Equipo("equipo17");
-        Equipo equipo18 = new Equipo("equipo18");
-        Equipo equipo19 = new Equipo("equipo19");
-        Equipo equipo20 = new Equipo("equipo20");
-        Equipo equipo21 = new Equipo("equipo21");
-        Equipo equipo22 = new Equipo("equipo22");
+        Equipo_futbol equipo1 = new Equipo_futbol("equipo1");
+        Equipo_futbol equipo2 = new Equipo_futbol("equipo2");
+        Equipo_futbol equipo3 = new Equipo_futbol("equipo3");
+        Equipo_futbol equipo4 = new Equipo_futbol("equipo4");
+        Equipo_futbol equipo5 = new Equipo_futbol("equipo5");
+        Equipo_futbol equipo6 = new Equipo_futbol("equipo6");
+        Equipo_futbol equipo7 = new Equipo_futbol("equipo7");
+        Equipo_futbol equipo8 = new Equipo_futbol("equipo8");
+        Equipo_futbol equipo9 = new Equipo_futbol("equipo9");
+        Equipo_futbol equipo10 = new Equipo_futbol("equipo10");
+        Equipo_futbol equipo11 = new Equipo_futbol("equipo11");
+        Equipo_futbol equipo12 = new Equipo_futbol("equipo12");
+        Equipo_futbol equipo13 = new Equipo_futbol("equipo13");
+        Equipo_futbol equipo14 = new Equipo_futbol("equipo14");
+        Equipo_futbol equipo15 = new Equipo_futbol("equipo15");
+        Equipo_futbol equipo16 = new Equipo_futbol("equipo16");
+        Equipo_futbol equipo17 = new Equipo_futbol("equipo17");
+        Equipo_futbol equipo18 = new Equipo_futbol("equipo18");
+        Equipo_futbol equipo19 = new Equipo_futbol("equipo19");
+        Equipo_futbol equipo20 = new Equipo_futbol("equipo20");
+        Equipo_futbol equipo21 = new Equipo_futbol("equipo21");
+        Equipo_futbol equipo22 = new Equipo_futbol("equipo22");
 
         equipos[0] = equipo1;
         equipos[1] = equipo2;
@@ -71,7 +69,7 @@ public class Liga implements NormasLiga{
         equipos[21] = equipo22;
     }
 
-    public void jugarLiga() {
+    public void calcularJornada() {
 
         for (int i = 0; i<=11; i++) {
             equipos[i].setGoles();
@@ -85,6 +83,10 @@ public class Liga implements NormasLiga{
             }
         }
 
+
+    }
+
+    public void consultarTabla() {
 
     }
 
