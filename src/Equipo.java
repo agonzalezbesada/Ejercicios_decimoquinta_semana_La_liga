@@ -1,17 +1,8 @@
-public class Equipo {
-    private String nombreEquipo;
+public interface Equipo {
 
-    Equipo() {
+    String getNombreEquipo();
 
-    }
+    void setGoles();
 
-    Equipo(String nombre) {
-        this.nombreEquipo=nombre;
-    }
-
-
-
-    public String getNombreEquipo() {
-        return nombreEquipo;
-    }
+    int getGoles();
 }
