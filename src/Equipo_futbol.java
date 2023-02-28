@@ -1,7 +1,25 @@
+/**
+ * Clase del equipo
+ * @author Adrián
+ * @version 1.0
+ */
 public class Equipo_futbol implements Equipo{
+    /**
+     * Nombre del equipo
+     */
     private String nombreEquipo;
-
+    /**
+     * Goles del equipo
+     */
     private int goles;
+    private int partidosJugados;
+    private int golesFavor;
+    private int golesContra;
+    private int victorias;
+    private int derrotas;
+    private int empates;
+    private int puntuacion;
+
 
     Equipo_futbol() {
 
@@ -12,6 +30,9 @@ public class Equipo_futbol implements Equipo{
     }
 
 
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo=nombreEquipo;
+    }
     public String getNombreEquipo() {
         return nombreEquipo;
     }
@@ -24,4 +45,85 @@ public class Equipo_futbol implements Equipo{
     public int getGoles() {
         return goles;
     }
+
+    public void setPartidosJugados() {
+        this.partidosJugados=partidosJugados;
+    }
+
+    public int getPartidosJugados() {
+        return partidosJugados;
+    }
+
+    public void setGolesFavor(int golesFavor) {
+        this.golesFavor=golesFavor;
+    }
+
+    public int getGolesFavor() {
+        return golesFavor;
+    }
+
+    public void setGolesContra(int golesContra) {
+        this.golesContra=golesContra;
+    }
+
+    public int getGolesContra() {
+        return golesContra;
+    }
+
+    public void setVictorias() {
+        this.victorias=victorias;
+    }
+
+    public int getVictorias() {
+        return victorias;
+    }
+
+    public void setDerrotas() {
+        this.derrotas=derrotas;
+    }
+
+    public int getDerrotas() {
+        return derrotas;
+    }
+
+    public void setEmpates() {
+        this.empates=empates;
+    }
+
+    public int getEmpates() {
+        return empates;
+    }
+
+    public void setPuntuacion() {
+        this.puntuacion=puntuacion;
+    }
+
+    public int getPuntuacion() {
+        return puntuacion;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

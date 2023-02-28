@@ -1,3 +1,8 @@
+/**
+ * Clase de la liga
+ * @author Adrián
+ * @version 1.0
+ */
 public class Liga_futbol implements Liga {
 
 
@@ -20,7 +25,6 @@ public class Liga_futbol implements Liga {
         System.out.println(equipos[1].getNombreEquipo());
 
     }
-
     private void rellenarEquipos() {
         Equipo_futbol equipo1 = new Equipo_futbol("equipo1");
         Equipo_futbol equipo2 = new Equipo_futbol("equipo2");
@@ -89,10 +93,6 @@ public class Liga_futbol implements Liga {
     public void consultarTabla() {
 
     }
-
-
-
-
 
 }
 
