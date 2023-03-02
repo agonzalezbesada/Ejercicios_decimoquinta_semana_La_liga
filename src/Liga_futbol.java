@@ -26,28 +26,28 @@ public class Liga_futbol implements Liga {
 
     }
     private void rellenarEquipos() {
-        Equipo_futbol equipo1 = new Equipo_futbol("equipo1");
-        Equipo_futbol equipo2 = new Equipo_futbol("equipo2");
-        Equipo_futbol equipo3 = new Equipo_futbol("equipo3");
-        Equipo_futbol equipo4 = new Equipo_futbol("equipo4");
-        Equipo_futbol equipo5 = new Equipo_futbol("equipo5");
-        Equipo_futbol equipo6 = new Equipo_futbol("equipo6");
-        Equipo_futbol equipo7 = new Equipo_futbol("equipo7");
-        Equipo_futbol equipo8 = new Equipo_futbol("equipo8");
-        Equipo_futbol equipo9 = new Equipo_futbol("equipo9");
-        Equipo_futbol equipo10 = new Equipo_futbol("equipo10");
-        Equipo_futbol equipo11 = new Equipo_futbol("equipo11");
-        Equipo_futbol equipo12 = new Equipo_futbol("equipo12");
-        Equipo_futbol equipo13 = new Equipo_futbol("equipo13");
-        Equipo_futbol equipo14 = new Equipo_futbol("equipo14");
-        Equipo_futbol equipo15 = new Equipo_futbol("equipo15");
-        Equipo_futbol equipo16 = new Equipo_futbol("equipo16");
-        Equipo_futbol equipo17 = new Equipo_futbol("equipo17");
-        Equipo_futbol equipo18 = new Equipo_futbol("equipo18");
-        Equipo_futbol equipo19 = new Equipo_futbol("equipo19");
-        Equipo_futbol equipo20 = new Equipo_futbol("equipo20");
-        Equipo_futbol equipo21 = new Equipo_futbol("equipo21");
-        Equipo_futbol equipo22 = new Equipo_futbol("equipo22");
+        Equipo_futbol equipo1 = new Equipo_futbol("Real Madrid");
+        Equipo_futbol equipo2 = new Equipo_futbol("F.C. Barcelona");
+        Equipo_futbol equipo3 = new Equipo_futbol("Atlético de Madrid");
+        Equipo_futbol equipo4 = new Equipo_futbol("Valencia");
+        Equipo_futbol equipo5 = new Equipo_futbol("Sevilla");
+        Equipo_futbol equipo6 = new Equipo_futbol("Espanyol");
+        Equipo_futbol equipo7 = new Equipo_futbol("Real sociedad");
+        Equipo_futbol equipo8 = new Equipo_futbol("Betis Balompié");
+        Equipo_futbol equipo9 = new Equipo_futbol("Celta");
+        Equipo_futbol equipo10 = new Equipo_futbol("Deport");
+        Equipo_futbol equipo11 = new Equipo_futbol("Osasuna");
+        Equipo_futbol equipo12 = new Equipo_futbol("Sporting");
+        Equipo_futbol equipo13 = new Equipo_futbol("Villareal");
+        Equipo_futbol equipo14 = new Equipo_futbol("Las Palmas");
+        Equipo_futbol equipo15 = new Equipo_futbol("Granada");
+        Equipo_futbol equipo16 = new Equipo_futbol("Getafe");
+        Equipo_futbol equipo17 = new Equipo_futbol("Rayo Vallecano");
+        Equipo_futbol equipo18 = new Equipo_futbol("Elche");
+        Equipo_futbol equipo19 = new Equipo_futbol("Levante");
+        Equipo_futbol equipo20 = new Equipo_futbol("Hércules");
+        Equipo_futbol equipo21 = new Equipo_futbol("Leganés");
+        Equipo_futbol equipo22 = new Equipo_futbol("Esportiu");
 
         equipos[0] = equipo1;
         equipos[1] = equipo2;
@@ -73,25 +73,100 @@ public class Liga_futbol implements Liga {
         equipos[21] = equipo22;
     }
 
-    public void calcularJornada() {
+    public void calcularJornada(int jornada) {
 
-        for (int i = 0; i<=11; i++) {
+        if ((jornada % 2)==0) {
+            System.out.println("\n"+"Ida"+"\n");
+        } else {
+            System.out.println("\n"+"Vuelta"+"\n");
+        }
+
+
+        for (int i = 0; i<=21; i = i + 2) {
+
+            equipos[i].setPartidosJugados();
+            equipos[i+1].setPartidosJugados();
+
             equipos[i].setGoles();
             equipos[i+1].setGoles();
-            if (equipos[0].getGoles()>equipos[i+1].getGoles()) {
-                System.out.println("Gana equipo 1");
-            } else if (equipos[0].getGoles()<equipos[i+1].getGoles()) {
-                System.out.println("Gana equipo 2");
+
+            equipos[i].setGolesContra(equipos[i+1].getGoles());
+            equipos[i+1].setGolesContra(equipos[i].getGoles());
+
+            if (equipos[i].getGoles()>equipos[i+1].getGoles()) {
+
+                System.out.println("Gana "+equipos[i].getNombreEquipo());
+                equipos[i].setVictorias();
+                equipos[i+1].setDerrotas();
+
+            } else if (equipos[i].getGoles()<equipos[i+1].getGoles()) {
+
+                System.out.println("Gana "+equipos[i+1].getNombreEquipo());
+                equipos[i+1].setVictorias();
+                equipos[i].setDerrotas();
+
             } else {
+
                 System.out.println("Empate");
+                equipos[i].setEmpates();
+                equipos[i+1].setEmpates();
             }
         }
+
+
+
+        /* For inverso
+        for (int i = 21; i>=0; i = i - 2) {
+
+            equipos[i].setPartidosJugados();
+            equipos[i-1].setPartidosJugados();
+
+            equipos[i].setGoles();
+            equipos[i-1].setGoles();
+
+            equipos[i].setGolesContra(equipos[i-1].getGoles());
+            equipos[i-1].setGolesContra(equipos[i].getGoles());
+
+            if (equipos[i].getGoles()>equipos[i-1].getGoles()) {
+
+                System.out.println("Gana "+equipos[i].getNombreEquipo());
+                equipos[i].setVictorias();
+                equipos[i-1].setDerrotas();
+
+            } else if (equipos[i].getGoles()<equipos[i-1].getGoles()) {
+
+                System.out.println("Gana "+equipos[i-1].getNombreEquipo());
+                equipos[i-1].setVictorias();
+                equipos[i].setDerrotas();
+
+            } else {
+
+                System.out.println("Empate");
+                equipos[i].setEmpates();
+                equipos[i-1].setEmpates();
+            }
+        }
+         */
+
 
 
     }
 
     public void consultarTabla() {
+        Equipo_futbol aux = new Equipo_futbol();
+        for (int i = 0;i<22;i++) {
+            for (int j = 0; j < 22 - 1; j++) {
+                if (equipos[j].getVictorias() < equipos[j + 1].getVictorias()) {
+                    aux = equipos[j];
+                    equipos[j] = equipos[j + 1];
+                    equipos[j + 1] = aux;
+                }
+            }
+        }
 
+        for (Equipo_futbol e:equipos) {
+            System.out.println(e.getNombreEquipo()+" Victorias: "+e.getVictorias());
+        }
     }
 
 }

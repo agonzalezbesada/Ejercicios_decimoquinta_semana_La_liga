@@ -13,7 +13,7 @@ public interface Liga {
     /**
      * Calcula los resultados de los partidos
      */
-    void calcularJornada();
+    void calcularJornada(int jornada);
 
     /**
      * Muestra los resultados de los partidos

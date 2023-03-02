@@ -39,6 +39,7 @@ public class Equipo_futbol implements Equipo{
 
     public void setGoles() {
         int goles = (int) (Math.random() * (10-0+1) + 0);
+        setGolesFavor(goles);
         this.goles = goles;
     }
 
@@ -47,6 +48,7 @@ public class Equipo_futbol implements Equipo{
     }
 
     public void setPartidosJugados() {
+        partidosJugados++;
         this.partidosJugados=partidosJugados;
     }
 
@@ -54,8 +56,8 @@ public class Equipo_futbol implements Equipo{
         return partidosJugados;
     }
 
-    public void setGolesFavor(int golesFavor) {
-        this.golesFavor=golesFavor;
+    public void setGolesFavor(int goles) {
+        this.golesFavor += goles;
     }
 
     public int getGolesFavor() {
@@ -71,6 +73,7 @@ public class Equipo_futbol implements Equipo{
     }
 
     public void setVictorias() {
+        victorias++;
         this.victorias=victorias;
     }
 
@@ -79,6 +82,7 @@ public class Equipo_futbol implements Equipo{
     }
 
     public void setDerrotas() {
+        derrotas++;
         this.derrotas=derrotas;
     }
 
@@ -87,6 +91,7 @@ public class Equipo_futbol implements Equipo{
     }
 
     public void setEmpates() {
+        empates++;
         this.empates=empates;
     }
 

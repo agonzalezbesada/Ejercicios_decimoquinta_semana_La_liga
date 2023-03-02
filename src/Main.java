@@ -4,8 +4,9 @@ public class Main {
         Scanner guardar = new Scanner(System.in);
 
         Liga_futbol liga1 = null;
-        boolean existeLiga = false;
-        int eleccion = 0;
+        boolean existeLiga = false; // Comprueba si la liga existe
+        int jornada = 1; // Variable utilizada para decidir si es ida o vuelta
+        int eleccion = 0; // Eleccion del switch
 
         do {
 
@@ -34,7 +35,8 @@ public class Main {
 
                                 case 1:
                                     try {
-                                        liga1.calcularJornada();
+                                        jornada++;
+                                        liga1.calcularJornada(jornada);
                                     } catch (NullPointerException exception) {
                                         System.out.println("\n"+"Error, debe crear una liga");
                                     }
@@ -42,7 +44,7 @@ public class Main {
                                     break;
 
                                 case 2:
-
+                                    liga1.consultarTabla();
                                     break;
 
 
@@ -58,8 +60,23 @@ public class Main {
                     break;
 
                 case 3:
-                    liga1 = null;
-                    existeLiga = false;
+                    if (existeLiga) {
+                        System.out.println("\n"+"Seguro que quiere borrar la mejor liga de la historia ("+liga1.getNombreLiga()+")?"+" Escriba Si o No");
+                        String decision = guardar.next();
+
+                        if (decision.contains("Si")) {
+                            liga1 = null;
+                            existeLiga = false;
+                            jornada = 1;
+                            System.out.println("\n"+"Liga borrada"+"\n");
+                            break;
+
+                        } else {
+                            System.out.println("\n"+"Menos mal");
+                        }
+                    }
+                    System.out.println("\n"+"No existe ninguna liga"+"\n");
+
                     break;
 
 
