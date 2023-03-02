@@ -21,10 +21,6 @@ public class Liga_futbol implements Liga {
         return nombreLiga;
     }
 
-    public void decirNombre() {
-        System.out.println(equipos[1].getNombreEquipo());
-
-    }
     private void rellenarEquipos() {
         Equipo_futbol equipo1 = new Equipo_futbol("Real Madrid");
         Equipo_futbol equipo2 = new Equipo_futbol("F.C. Barcelona");
