@@ -5,9 +5,9 @@
  */
 public interface Liga {
     /**
-     * Array con los equipos
+     * Matriz con los equipos
      */
-    Equipo_futbol[] equipos = new Equipo_futbol[22];
+    Equipo_futbol[][] equipos = new Equipo_futbol[11][2];
 
 
     /**
